@@ -1,4 +1,4 @@
-// src/features/todosSlice.js
+
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -15,7 +15,7 @@ export const addTodo = createAsyncThunk('todos/addTodo', async (newTodo) => {
 const todosSlice = createSlice({
   name: 'todos',
   initialState: {
-    todosByUser: {} // Un objeto que almacena los todos por userId
+    todosByUser: {} 
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -29,7 +29,7 @@ const todosSlice = createSlice({
         if (!state.todosByUser[newTodo.userId]) {
           state.todosByUser[newTodo.userId] = [];
         }
-        state.todosByUser[newTodo.userId].unshift(newTodo);  // Agregar la nueva tarea al principio
+        state.todosByUser[newTodo.userId].unshift(newTodo);
       });
   }
 });

@@ -11,20 +11,16 @@ const App = () => {
     <div>
       <h1>NuxibaTechnologies Test</h1>
       <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-        {/* Encierra la lista de usuarios en un contenedor con borde rojo */}
         <div className="user-list-container">
           <UserList />
         </div>
 
-        {/* Detalles del usuario */}
         <UserDetails />
       </div>
 
       <div style={{ display: 'flex', gap: '20px', marginTop: '20px', justifyContent: 'center' }}>
-        {/* Posts del usuario seleccionado */}
         <Posts />
 
-        {/* Tareas del usuario seleccionado */}
         <Todos />
       </div>
     </div>

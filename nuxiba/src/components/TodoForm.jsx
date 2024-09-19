@@ -1,4 +1,4 @@
-// TodoForm.jsx
+
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo } from '../features/todosSlice';
@@ -13,20 +13,18 @@ const TodoForm = () => {
     e.preventDefault();
     if (!user) return;
 
-    // Crear el objeto JSON con la información de la nueva tarea
+    // Crear el objeto JSON con la información de la nueva tarea, solo en consola
     const newTodo = {
       userId: user.id,
       title: title,
       completed: completed
     };
 
-    // Despachar la acción de Redux para agregar la nueva tarea
     dispatch(addTodo(newTodo));
 
-    // Opcional: Mostrar el JSON en consola para verificar
+    // Consola
     console.log('New Todo JSON:', JSON.stringify(newTodo, null, 2));
 
-    // Resetear el formulario
     setTitle('');
     setCompleted(false);
   };

@@ -34,7 +34,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* Estilos para la lista de usuarios (sin el cuadro rojo) */
+/* Estilos para la lista de usuarios*/
 .user-list {
   border: 2px solid #3498db;
   border-radius: 8px;
@@ -47,20 +47,20 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Hover en los nombres de los usuarios */
+/* Nombres de los usuarios */
 .user-item {
   padding: 12px;
   margin: 5px 0;
   cursor: pointer;
   border-bottom: 1px solid #eee;
   border-radius: 4px;
-  text-align: left; /* Mantener los nombres de los usuarios alineados a la izquierda */
-  transition: background-color 0.3s, color 0.3s; /* Añadir transición suave */
+  text-align: left; 
+  transition: background-color 0.3s, color 0.3s; 
 }
 
 .user-item:hover {
-  background-color: #3498db; /* Cambiar el fondo al pasar el mouse */
-  color: #fff; /* Cambiar el color del texto al pasar el mouse */
+  background-color: #3498db; 
+  color: #fff; 
 }
 
 .user-item.active {
@@ -92,7 +92,6 @@ h1 {
   border: 2px solid #2ecc71;
 }
 
-/* Ajuste de textos para que salten de línea antes */
 .post-item, .todo-item {
   margin-bottom: 15px;
   padding: 10px;
@@ -124,7 +123,6 @@ h1 {
   color: #888;
 }
 
-/* Restaurar colores de botones */
 button {
   padding: 10px 15px;
   font-size: 14px;
@@ -142,7 +140,6 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para el formulario de tareas */
 .todo-form {
   margin-top: 20px;
   padding: 15px;
