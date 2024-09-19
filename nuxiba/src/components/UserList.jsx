@@ -11,11 +11,11 @@ const UserList = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className='user-list'>
       <h2>Usuarios</h2>
       <ul>
         {users.map(user => (
-          <li key={user.id} onClick={() => dispatch(selectUser(user))}>
+          <li className="user-item"  key={user.id} onClick={() => dispatch(selectUser(user))}>
             {user.name}
           </li>
         ))}

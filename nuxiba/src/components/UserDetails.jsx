@@ -10,7 +10,7 @@ const UserDetails = () => {
   if (!user) return <p>Selecciona un usuario</p>;
 
   return (
-    <div>
+    <div className='user-details'>
       <h3>{user.name} ({user.username})</h3>
       <p>Email: {user.email}</p>
       <button onClick={() => dispatch(fetchPosts(user.id))}>Ver Posts</button>

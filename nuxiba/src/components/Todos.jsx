@@ -7,11 +7,11 @@ const Todos = () => {
   const todos = useSelector(state => state.todos.todos);
 
   return (
-    <div>
+    <div className='todos'>
       <h3>Tareas</h3>
       <ul>
         {todos.map(todo => (
-          <li key={todo.id}>{todo.title} {todo.completed ? '(Completado)' : '(Pendiente)'}</li>
+          <li className='todo-item' key={todo.id}>{todo.title} {todo.completed ? '(Completado)' : '(Pendiente)'}</li>
         ))}
       </ul>
       <TodoForm />
