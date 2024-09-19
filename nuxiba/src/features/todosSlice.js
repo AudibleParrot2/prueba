@@ -1,10 +1,10 @@
-
+// src/features/todosSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchTodos = createAsyncThunk('todos/fetchTodos', async (userId) => {
   const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}/todos`);
-  return response.data.sort((a, b) => b.id - a.id);  // Ordenar por id de mayor a menor
+  return { userId, todos: response.data.sort((a, b) => b.id - a.id) };
 });
 
 export const addTodo = createAsyncThunk('todos/addTodo', async (newTodo) => {
@@ -15,17 +15,21 @@ export const addTodo = createAsyncThunk('todos/addTodo', async (newTodo) => {
 const todosSlice = createSlice({
   name: 'todos',
   initialState: {
-    todos: [],
-    status: 'idle'
+    todosByUser: {} // Un objeto que almacena los todos por userId
   },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.fulfilled, (state, action) => {
-        state.todos = action.payload;
+        const { userId, todos } = action.payload;
+        state.todosByUser[userId] = todos;
       })
       .addCase(addTodo.fulfilled, (state, action) => {
-        state.todos.unshift(action.payload);  // Agregar la nueva tarea al principio
+        const newTodo = action.payload;
+        if (!state.todosByUser[newTodo.userId]) {
+          state.todosByUser[newTodo.userId] = [];
+        }
+        state.todosByUser[newTodo.userId].unshift(newTodo);  // Agregar la nueva tarea al principio
       });
   }
 });
