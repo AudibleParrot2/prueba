@@ -1,0 +1,207 @@
+/* Estilos globales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  display: flex;
+  justify-content: center; /* Centrar todo el contenido horizontalmente */
+  align-items: flex-start; /* Alinearlo al principio de la pantalla */
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar todo el contenido dentro del contenedor */
+}
+
+/* Estilos para la lista de usuarios */
+.user-list {
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  max-width: 600px; /* Fija el ancho máximo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centrar el texto de los usuarios */
+}
+
+.user-list h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 8px;
+}
+
+.user-item {
+  padding: 12px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-left 0.3s;
+  text-align: left; /* Mantener los nombres de los usuarios alineados a la izquierda */
+}
+
+.user-item:hover {
+  background-color: #eaeaea;
+  border-left: 4px solid #3498db;
+}
+
+.user-item.active {
+  background-color: #d4e6f1;
+  border-left: 4px solid #2980b9;
+}
+
+/* Estilos para los detalles del usuario */
+.user-details {
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px; /* Mantener el ancho máximo en detalles */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Mantener alineación a la izquierda en detalles */
+}
+
+/* Botones */
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de Posts y Todos */
+.posts, .todos {
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Mantener alineación a la izquierda en los posts y todos */
+}
+
+.posts {
+  border-color: #e74c3c; /* Cambia el color del borde de los posts */
+}
+
+.todos {
+  border-color: #2ecc71; /* Cambia el color del borde de los todos */
+}
+
+.posts h3, .todos h3 {
+  font-size: 18px;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.post-item, .todo-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  border-radius: 4px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.post-item:hover, .todo-item:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.post-item h4, .todo-item h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.todo-item.completed h4 {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Estilo para el formulario de tareas */
+.todo-form {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e8f4f8;
+  border: 2px solid #2ecc71;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.todo-form input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.todo-form input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-form button {
+  background-color: #2ecc71;
+  transition: background-color 0.3s;
+}
+
+.todo-form button:hover {
+  background-color: #27ae60;
+}
+
+/* Layout responsivo */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center; /* Centrar todo en pantallas pequeñas */
+  }
+
+  .user-list, .user-details, .posts, .todos {
+    margin: 10px 0;
+    width: 100%; /* Asegurar que use todo el ancho disponible */
+    max-width: 100%; /* Evitar que quede un ancho fijo en pantallas pequeñas */
+  }
+
+  .user-list {
+    max-height: 250px;
+  }
+
+  .posts, .todos {
+    max-height: 300px;
+  }
+}
