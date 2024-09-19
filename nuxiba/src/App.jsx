@@ -9,7 +9,7 @@ import './App.css';
 const App = () => {
   return (
     <div>
-      <h1>Prueba App</h1>
+      <h1>NuxibaTechnologies Test</h1>
       <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
         {/* Encierra la lista de usuarios en un contenedor con borde rojo */}
         <div className="user-list-container">

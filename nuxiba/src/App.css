@@ -39,7 +39,7 @@ h1 {
   border: 2px solid #3498db;
   border-radius: 8px;
   background-color: #fff;
-  padding: 20px;
+  padding: 8px;
   width: 100%;
   max-width: 350px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -146,8 +146,7 @@ button:hover {
 .todo-form {
   margin-top: 20px;
   padding: 15px;
-  background-color: #e8f4f8;
-  border: 2px solid #2ecc71;
+
   border-radius: 8px;
   width: 100%;
 }
